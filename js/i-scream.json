@@ -25,6 +25,17 @@
         "clover honey"
       ],
       "image" : "https://nathanpage2.github.io/comp1073s25-Week10/images/peach-mango.svg"
+    },
+    {
+      "name" : "Strawberry Sprinkle",
+      "calories" : 280,
+      "type" : "Ice Cream",
+      "ingredients" : [
+        "Sprinkles",
+        "mango chunks",
+        "Vanilla Base"
+      ],
+      "image" : "https://nathanpage2.github.io/comp1073s25-Week10/images/strawberry-sprinkle.svg"
     }
   ]
 }
