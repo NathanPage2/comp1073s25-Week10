@@ -13,7 +13,7 @@
         "dark chocolate chips",
         "vanilla extract"
       ],
-      "image" : "chocolate-mint.svg"
+      "image" : "https://nathanpage2.github.io/comp1073s25-Week10/images/chocolate-mint.svg"
     },
     {
       "name" : "Perfect Peach Mango",
@@ -24,7 +24,7 @@
         "mango chunks",
         "clover honey"
       ],
-      "image" : "peach-mango.svg"
+      "image" : "https://nathanpage2.github.io/comp1073s25-Week10/images/peach-mango.svg"
     }
   ]
 }
