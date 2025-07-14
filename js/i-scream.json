@@ -1,0 +1,30 @@
+{
+  "companyName" : "I-Scream Company Inc.",
+  "headOffice" : "North Pole",
+  "established" : 2025,
+  "active" : true,
+  "topFlavors" : [
+    {
+      "name" : "Chocolate Mint",
+      "calories" : 240,
+      "type" : "ice cream",
+      "ingredients" : [
+        "peppermint cream",
+        "dark chocolate chips",
+        "vanilla extract"
+      ],
+      "image" : "chocolate-mint.svg"
+    },
+    {
+      "name" : "Perfect Peach Mango",
+      "calories" : 350,
+      "type" : "sorbet",
+      "ingredients" : [
+        "peach purée",
+        "mango chunks",
+        "clover honey"
+      ],
+      "image" : "peach-mango.svg"
+    }
+  ]
+}
