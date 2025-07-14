@@ -36,6 +36,28 @@
         "Vanilla Base"
       ],
       "image" : "https://nathanpage2.github.io/comp1073s25-Week10/images/strawberry-sprinkle.svg"
+    },
+    {
+      "name" : "Orange Cream",
+      "calories" : 500,
+      "type" : "Milk Shake",
+      "ingredients" : [
+        "Milk",
+        "Orange chunks",
+        "Cream flavor"
+      ],
+      "image" : "https://nathanpage2.github.io/comp1073s25-Week10/images/ice-cream-xtra1.svg"
+    },
+    {
+      "name" : "Moose Tracks",
+      "calories" : 675,
+      "type" : "Scoop",
+      "ingredients" : [
+        "Peanut Butter",
+        "Chocolate",
+        "Milk"
+      ],
+      "image" : "https://nathanpage2.github.io/comp1073s25-Week10/images/ice-cream-xtra2.svg"
     }
   ]
 }
