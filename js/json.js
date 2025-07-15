@@ -44,6 +44,15 @@ function populateHeader(jsonBody) {
 function showTopFlavors(jsonBody) {
     // STEP 10c: Attache the JSON topFlavors object to a variable
     let topFlavors = jsonBody.topFlavors;
+    
+    // Define calorie multipliers for different types.
+    const typeCalories = {
+        "Ice Cream": 1.0,      // Base calories
+        "Sorbet": 0.7,         // 30% fewer calories
+        "Milk Shake": 1.5,     // 50% more calories
+        "Scoop": 1.2           // 20% more calories
+    };
+    
     // STEP 10d: Loop through the topFlavors object
     for (let i = 0; i < topFlavors.length; i ++) {
         console.log(topFlavors[i]);
@@ -57,6 +66,25 @@ function showTopFlavors(jsonBody) {
         if (topFlavors[i].calories > 300){
             p1.style.color = 'red';
         }
+        
+        // Create type selector.
+        let typeSelector = document.createElement("select");
+        typeSelector.className = "type-selector";
+        typeSelector.setAttribute("data-flavor-index", i);
+        typeSelector.setAttribute("data-base-calories", topFlavors[i].calories);
+        
+        // Add options for each type.
+        const types = ["Ice Cream", "Sorbet", "Milk Shake", "Scoop"];
+        types.forEach(type => {
+            let option = document.createElement("option");
+            option.value = type;
+            option.textContent = type; // Already properly capitalized
+            if (type.toLowerCase() === topFlavors[i].type.toLowerCase()) {
+                option.selected = true;
+            }
+            typeSelector.appendChild(option);
+        });
+        
         // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
         h2.textContent = topFlavors[i].name;
         p1.textContent = "Calories: " + topFlavors[i].calories;
@@ -76,10 +104,48 @@ function showTopFlavors(jsonBody) {
         article.appendChild(h2);
         article.appendChild(p1);
         article.appendChild(p2);
+        article.appendChild(typeSelector);
         article.appendChild(list);
         article.appendChild(image);
         // STEP 10i: Append each complete ARTICLE element to the SECTION element
         section.appendChild(article);
+        
+        // Add event listener to type selector.
+        typeSelector.addEventListener("change", function() {
+            const flavorIndex = parseInt(this.getAttribute("data-flavor-index"));
+            const baseCalories = parseInt(this.getAttribute("data-base-calories"));
+            const selectedType = this.value;
+            const multiplier = typeCalories[selectedType] || 1.0; // Revert back to default just incase.
+            const newCalories = Math.round(baseCalories * multiplier);
+            
+            // Update the calories display with visual feedback.
+            const caloriesElement = article.querySelector("p");
+            caloriesElement.textContent = "Calories: " + newCalories;
+            caloriesElement.classList.add("calories-updated");
+            
+            // Update color based on new calories.
+            if (newCalories > 300) {
+                caloriesElement.style.color = 'red';
+            } else {
+                caloriesElement.style.color = 'blue';
+            }
+            
+            // Remove the highlight after 2 seconds.
+            setTimeout(() => {
+                caloriesElement.classList.remove("calories-updated");
+            }, 2000);
+            
+            // Update the type display.
+            const typeElement = article.querySelectorAll("p")[1];
+            typeElement.textContent = "Type: " + selectedType;
+            
+            // Show calorie change info.
+            const originalCalories = topFlavors[flavorIndex].calories;
+            if (newCalories !== originalCalories) {
+                const change = newCalories > originalCalories ? "+" + (newCalories - originalCalories) : (newCalories - originalCalories);
+                console.log(`${topFlavors[flavorIndex].name}: ${originalCalories} → ${newCalories} (${change} calories)`);
+            }
+        });
     };
 };
 // STEP 11: The instructor will edit the JSON file - refresh your page to see the updated content

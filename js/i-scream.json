@@ -7,7 +7,7 @@
     {
       "name" : "Chocolate Mint",
       "calories" : 240,
-      "type" : "ice cream",
+      "type" : "Ice Cream",
       "ingredients" : [
         "peppermint cream",
         "dark chocolate chips",
@@ -18,7 +18,7 @@
     {
       "name" : "Perfect Peach Mango",
       "calories" : 350,
-      "type" : "sorbet",
+      "type" : "Sorbet",
       "ingredients" : [
         "peach purée",
         "mango chunks",

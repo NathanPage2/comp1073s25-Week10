@@ -58,3 +58,34 @@ h2 {
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
+
+/* Type selector styles */
+.type-selector {
+  font-size: 1rem;
+  padding: 8px 12px;
+  margin: 10px 0;
+  border: 2px solid #333;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  width: 100%;
+  font-family: inherit;
+}
+
+.type-selector:hover {
+  background-color: #e8e8e8;
+  border-color: #555;
+}
+
+.type-selector:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Highlight calories when they change */
+.calories-updated {
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
