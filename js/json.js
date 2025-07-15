@@ -54,6 +54,9 @@ function showTopFlavors(jsonBody) {
         let p1 = document.createElement("p");
         let p2= document.createElement("p");
         let list = document.createElement("ul");
+        if (topFlavors[i].calories > 300){
+            p1.style.color = 'red';
+        }
         // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
         h2.textContent = topFlavors[i].name;
         p1.textContent = "Calories: " + topFlavors[i].calories;
